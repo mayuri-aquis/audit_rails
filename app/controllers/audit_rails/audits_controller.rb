@@ -2,7 +2,7 @@ require_dependency "audit_rails/application_controller"
 
 module AuditRails
   class AuditsController < ApplicationController
-    before_filter :apply_filter, except: [:create]
+    before_action :apply_filter, except: [:create]
 
     def create
       add_to_audit("visit-site", "xyz", "Fake User")
